@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2015 Vikram Kakkar
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <!-- MultiDatePicker -->
+
+    <style name="MultiDatePickerStyle">
+        <item name="mdFirstDayOfWeek">0</item>
+        <item name="mdHeaderBackground">?mdHeaderBackgroundPtr</item>
+        <item name="mdMinDate">01/01/1900</item>
+        <item name="mdMaxDate">12/31/2100</item>
+        <item name="mdHeaderTextColor">?attr/mdPrimaryTextSecondaryWhenActivatedMaterialInversePtr</item>
+    </style>
+
+    <style name="MDDateLabelTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?attr/mdPrimaryTextSecondaryWhenActivatedMaterialInversePtr</item>
+        <item name="android:textSize">@dimen/md_date_picker_date_label_size</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="MDDateRangeLabelTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?attr/mdPrimaryTextSecondaryWhenActivatedMaterialInversePtr</item>
+        <item name="android:textSize">@dimen/md_date_picker_date_range_label_size</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="MDMonthLabelTextAppearance" parent="TextAppearance.AppCompat.Body2" />
+
+    <style name="MDWeekDayLabelTextAppearance" parent="TextAppearance.AppCompat.Caption" />
+
+    <!-- TextAppearance.Material.Widget.Calendar.Day -->
+    <style name="MDDayTextAppearance" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">?attr/mdCalendarDayTextColorPtr</item>
+    </style>
+
+    <!-- YearPickerView -->
+
+    <style name="YearPickerViewStyle">
+        <item name="mdYearListItemTextAppearance">@style/STextAppearance.DatePicker.List.YearLabel
+        </item>
+        <item name="mdYearListSelectorColor">?attr/colorControlActivated</item>
+        <item name="mdYearPickerBgColor">@android:color/transparent</item>
+    </style>
+
+    <style name="MDYearLabelTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">@dimen/md_datepicker_list_year_label_size</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="MDYearLabelActivatedTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">?attr/colorControlActivated</item>
+        <item name="android:textSize">@dimen/md_datepicker_list_year_activated_label_size</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="STextAppearance.DatePicker.List.YearLabel" parent="STextAppearance">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:textSize">@dimen/datepicker_year_label_text_size</item>
+    </style>
+
+    <!-- DayPickerView -->
+
+    <style name="DayPickerViewStyle">
+        <item name="mdDayPickerBgColor">@android:color/transparent</item>
+        <item name="mdMonthTextAppearance">@style/MDMonthLabelTextAppearance</item>
+        <item name="mdWeekDayTextAppearance">@style/MDWeekDayLabelTextAppearance</item>
+        <item name="mdDateTextAppearance">@style/MDDayTextAppearance</item>
+        <item name="mdDaySelectorColor">?attr/colorControlActivated</item>
+        <item name="mdDayHighlightColor">?attr/colorControlHighlight</item>
+    </style>
+
+    <!-- SimpleMonthView -->
+
+    <style name="MonthViewStyle">
+        <item name="mdSelectedDayCircleAlpha">60</item>
+        <item name="mdCalendarEnabledTextColor">?android:attr/textColorSecondary</item>
+        <item name="mdCalendarDisabledTextColor">?attr/mdCalendarDisabledTextColor</item>
+        <item name="mdCalendarEnabledSelectedTextColor">?attr/colorAccent</item>
+        <item name="mdMonthNameTextColor">?android:attr/textColorSecondary</item>
+        <item name="mdDayNameTextColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="STextAppearanceBase">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColorHint">?android:attr/textColorHint</item>
+        <item name="android:textColorHighlight">?android:attr/textColorHighlight</item>
+        <item name="android:textColorLink">?android:attr/textColorLink</item>
+        <item name="android:textSize">@dimen/text_size_body_1</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="STextAppearance" parent="STextAppearanceBase" />
+
+    <style name="STextAppearance.DatePicker.DayOfWeekLabel" parent="STextAppearance">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+        <item name="android:textSize">@dimen/datepicker_header_text_size</item>
+    </style>
+
+    <style name="STextAppearance.DatePicker.MonthLabel" parent="STextAppearance">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">?android:attr/textColorSecondaryInverse</item>
+        <item name="android:textSize">@dimen/datepicker_selected_date_month_size</item>
+    </style>
+
+    <style name="STextAppearance.DatePicker.DayOfMonthLabel" parent="STextAppearance">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">?android:attr/textColorSecondaryInverse</item>
+        <item name="android:textSize">@dimen/datepicker_selected_date_day_size</item>
+    </style>
+
+    <style name="STextAppearance.DatePicker.YearLabel" parent="STextAppearance">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">?android:attr/textColorSecondaryInverse</item>
+        <item name="android:textSize">@dimen/datepicker_selected_date_year_size</item>
+    </style>
+
+    <style name="SButtonBarButtonStyleBase">
+        <item name="android:textAppearance">@style/SButtonTextAppearance</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textColor">?attr/colorAccent</item>
+        <item name="android:minWidth">64dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:minHeight">@dimen/md_dialog_button_bar_height</item>
+    </style>
+
+    <style name="SButtonBarButtonStyle" parent="SButtonBarButtonStyleBase" />
+
+    <!-- Used when extending the partition through Button bar
+         See land/styles.xml -->
+    <style name="SInvertedButtonBarButtonStyle" parent="SButtonBarButtonStyleBase" />
+
+    <style name="STextAppearanceBase.BaseButton">
+        <item name="android:textSize">@dimen/text_size_button_material</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="SButtonTextAppearance" parent="STextAppearanceBase.BaseButton" />
+
+    <style name="SButtonBarStyle">
+        <item name="android:background">@null</item>
+    </style>
+
+    <!-- TimePicker -->
+
+    <style name="MultiDateTimePickerStyle">
+        <item name="mdHeaderBackground">?mdHeaderBackgroundPtr</item>
+        <item name="mdHeaderTextColor">?attr/mdPrimaryTextSecondaryWhenActivatedMaterialInversePtr</item>
+    </style>
+
+    <style name="MDTimeLabelTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/md_timepicker_time_label_size</item>
+        <item name="android:textColor">?attr/mdPrimaryTextSecondaryWhenActivatedMaterialInversePtr</item>
+    </style>
+
+    <style name="MDAmPmLabelTextAppearance" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">@dimen/md_timepicker_ampm_label_size</item>
+        <item name="android:textColor">?attr/mdPrimaryTextSecondaryWhenActivatedMaterialInversePtr</item>
+    </style>
+
+    <!-- RadialTimePickerView -->
+
+    <style name="RadialTimePickerViewStyle">
+        <item name="mdNumbersTextColor">?attr/mdNumbersTextColorPtr</item>
+        <item name="mdNumbersSelectorColor">?attr/colorControlActivated</item>
+        <item name="mdNumbersBackgroundColor">?attr/mdNumbersBackgroundColorPtr</item>
+        <item name="mdNumbersInnerTextColor">?attr/mdNumbersInnerTextColorPtr</item>
+    </style>
+
+    <style name="STextAppearance.TimePicker.AmPmLabel" parent="STextAppearance">
+        <item name="android:textSize">@dimen/timepicker_ampm_label_size</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">?android:attr/textColorSecondaryInverse</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="STextAppearance.TimePicker.TimeLabel" parent="STextAppearance">
+        <item name="android:textSize">@dimen/timepicker_time_label_size</item>
+        <item name="android:textColor">?android:attr/textColorSecondaryInverse</item>
+    </style>
+
+    <!-- SublimeRecurrencePicker -->
+
+    <style name="MultiDateRecurrencePickerStyle">
+        <item name="mdRecurrencePickerHeadingStyle">@style/RecurrencePickerHeadingStyle</item>
+        <item name="mdRecurrencePickerOptionsStyle">@style/RecurrencePickerOptionsStyle</item>
+        <item name="mdHeaderBackground">?attr/colorAccent</item>
+        <item name="mdPickerBackground">@android:color/transparent</item>
+        <item name="mdSelectedOptionTextColor">?attr/colorAccent</item>
+        <item name="mdUnselectedOptionsTextColor">?android:attr/textColorPrimary</item>
+        <item name="mdPressedOptionBgColor">?attr/colorControlHighlight</item>
+        <item name="mdSelectedOptionDrawable">@drawable/checkmark_medium_ff</item>
+    </style>
+
+    <style name="RecurrencePickerHeadingStyle">
+        <item name="android:textAppearance">
+            @style/STextAppearance.RecurrencePickerHeadingTextAppearance
+        </item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <style name="STextAppearance.RecurrencePickerHeadingTextAppearance">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
+
+    <style name="RecurrencePickerOptionsStyle">
+        <item name="android:textAppearance">
+            @style/STextAppearance.RecurrencePickerOptionsTextAppearance
+        </item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="STextAppearance.RecurrencePickerOptionsTextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- RecurrenceOptionCreator -->
+
+    <style name="RecurrenceOptionCreatorStyle">
+        <item name="mdHeaderBackground">?attr/colorAccent</item>
+        <item name="mdEndDateFormat">mdMediumFormat</item>
+        <item name="mdRocLabelTextAppearance">
+            @style/STextAppearance.RecurrenceOptionCreatorLabelStyle
+        </item>
+        <item name="mdRocWeekButtonStyle">
+            @style/RecurrenceOptionCreatorWeekButtonStyle
+        </item>
+        <item name="mdRocEndDateStyle">
+            @style/RecurrenceOptionCreatorEndDateStyle
+        </item>
+        <item name="mdRocFreqSpinnerStyle">@style/RecurrenceOptionCreatorFreqSpinnerStyle</item>
+        <item name="mdRocEndSpinnerStyle">@style/RecurrenceOptionCreatorEndSpinnerStyle</item>
+        <item name="mdRocFreqSpinnerItemStyle">@style/FreqSpinnerItemStyle</item>
+        <item name="mdRocEndSpinnerItemStyle">@style/EndSpinnerItemStyle</item>
+        <item name="mdRocEndSpinnerDropDownItemStyle">@style/EndSpinnerDropDownItemStyle</item>
+        <item name="mdWeekButtonUnselectedTextColor">?attr/colorAccent</item>
+        <item name="mdWeekButtonSelectedTextColor">?android:attr/textColorPrimaryInverse</item>
+        <item name="mdWeekButtonSelectedCircleColor">?attr/colorAccent</item>
+    </style>
+
+    <style name="STextAppearance.RecurrenceOptionCreatorLabelStyle">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="RecurrenceOptionCreatorWeekButtonStyle">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="RecurrenceOptionCreatorEndDateStyle">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:textAppearance">@style/STextAppearance.EndDate</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:minWidth">80dp</item>
+        <item name="android:contentDescription">
+            @string/acessibility_recurrence_choose_end_date_description
+        </item>
+        <item name="android:gravity">center_horizontal|bottom</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="STextAppearance.EndDate">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="EndSpinnerDropDownItemStyle" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:textAppearance">@style/STextAppearance.EndSpinnerDropDownItem</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="STextAppearance.EndSpinnerDropDownItem">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="EndSpinnerItemStyle" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textAppearance">@style/STextAppearance.EndSpinnerItem</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="STextAppearance.EndSpinnerItem">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="FreqSpinnerItemStyle" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textAppearance">@style/STextAppearance.FreqSpinnerItem</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="STextAppearance.FreqSpinnerItem">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+    </style>
+
+    <style name="BaseRecurrenceOptionCreatorFreqSpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+    </style>
+
+    <style name="RecurrenceOptionCreatorFreqSpinnerStyle" parent="BaseRecurrenceOptionCreatorFreqSpinnerStyle">
+        <item name="android:background">@null</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="BaseRecurrenceOptionCreatorEndSpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:layout_marginLeft">8dp</item>
+    </style>
+
+    <style name="RecurrenceOptionCreatorEndSpinnerStyle" parent="BaseRecurrenceOptionCreatorEndSpinnerStyle">
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <!-- Button Panel Style -->
+
+    <style name="ButtonLayoutStyle">
+        <item name="mdPresentation">mdButton</item>
+        <item name="mdOkActionDrawable">@drawable/checkmark_medium_ff</item>
+        <item name="mdCancelActionDrawable">@drawable/cancel_medium_ff</item>
+        <item name="mdIconColor">?attr/colorAccent</item>
+        <item name="mdButtonBgColor">?attr/colorButtonNormal</item>
+        <item name="mdButtonPressedBgColor">?attr/colorControlHighlight</item>
+        <item name="mdButtonBarBgColor">@android:color/transparent</item>
+        <item name="mdButtonModeOkCancelButtonStyle">@style/SButtonBarButtonStyle</item>
+        <item name="mdButtonModeSwitcherButtonStyle">?attr/mdButtonModeOkCancelButtonStyle</item>
+        <item name="mdButtonInvertedBgColor">?attr/colorAccent</item>
+        <item name="mdButtonPressedInvertedBgColor">@color/md_ripple_material_dark</item>
+    </style>
+
+</resources>

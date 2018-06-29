@@ -1,0 +1,80 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+// Force character encoding in case the workspace was not set up correctly
+//tasks.withType(Javadoc) {
+//options.encoding = 'x-UTF-16LE-BOM'
+//}
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'multi-date-range-picker'
+
+    publishedGroupId = 'com.amammele.multidaterangepicker'
+    libraryName = 'MultiDateRangePicker'
+    artifact = 'multidaterangepicker'
+
+    libraryDescription = 'A material-styled android view that provisions picking of a date, time & recurrence option, all from a single user-interface.'
+
+    siteUrl = 'https://github.com/amammele/MultiDateRangePicker'
+    gitUrl = 'https://github.com/amammele/MultiDateRangePicker.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'amammele'
+    developerName = 'Alex Mammele'
+    developerEmail = 'amammele@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        minSdkVersion 22
+        targetSdkVersion 24
+        versionCode 4
+        versionName "2.1.1"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support:gridlayout-v7:26.1.0'
+}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
+javadoc {
+    options {
+        encoding = 'UTF-8'
+    }
+}
